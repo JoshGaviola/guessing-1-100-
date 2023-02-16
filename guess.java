@@ -10,8 +10,10 @@ public class guess {
         int randomNumber = rand.nextInt(100) + 1;
         
         System.out.println("guess a number between 1 and 100:");
+        int attempts = 0;
 
         while (true) {
+
             String inputStr = sc.next();
 
             try {
@@ -27,6 +29,9 @@ public class guess {
                 } else {
                     System.out.println("too high!");
                 }
+
+                attempts++;
+                System.out.println("Number of attemps: "+attempts);
 
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a number between 1 and 100:");
